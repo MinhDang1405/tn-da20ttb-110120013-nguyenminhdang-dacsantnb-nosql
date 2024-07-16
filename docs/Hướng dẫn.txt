@@ -2,7 +2,7 @@ git clone dự án về
 Mở MongoDB Compass tạo một database "KLTN" --> tạo một colettion --> "add data" --> "import JSON or CSV file" cuối cùng chọn db thêm vào
 Mở thư mục trên vscode, sau đó mở terminal
 - cd vào file Backend và sử dụng lệnh "npm start" để chạy file backend
-- cd vào file frontend và sử dụng lệnh "npm start" để chạy file frontend
+- cd vào file frontend và sử dụng lệnh "npm install" sau đó "npm start" để chạy file frontend
 
 localhost:3000/users (trang người dùng)
 localhost:3000/admin (trang quản trị)
