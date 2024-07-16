@@ -1,0 +1,34 @@
+.ant-card-head-title, .ant-card-meta-title {
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-bottom: 12px; 
+}
+
+.ant-typography.paragraph {
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 12px; 
+}
+
+.specialty-detail-container {
+    padding: 20px;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-image {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.detail-meta {
+    flex: 1;
+}
+
+.meta-info {
+    margin-top: 10px;
+}

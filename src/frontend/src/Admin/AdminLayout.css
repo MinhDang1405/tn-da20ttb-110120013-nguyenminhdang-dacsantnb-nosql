@@ -1,0 +1,47 @@
+/* Navbar Title */
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; 
+  text-align: left; 
+  margin-top: 10px; 
+  padding: 20px; 
+}
+
+
+.admin-content {
+  padding: 80px;
+}
+
+
+.ant-layout-sider {
+  background-color: #001529;
+}
+
+
+.ant-menu {
+  background-color: #001529;
+}
+
+.ant-menu-item {
+  margin: 0;
+}
+
+.ant-menu-item a {
+  color: #ffffff; 
+}
+
+.ant-menu-item-selected {
+  background-color: #1890ff;
+}
+
+
+
+.ant-layout-sider {
+  width: 400px; 
+}
+
+.ant-layout-sider-trigger {
+  font-size: 20px; 
+}
+
