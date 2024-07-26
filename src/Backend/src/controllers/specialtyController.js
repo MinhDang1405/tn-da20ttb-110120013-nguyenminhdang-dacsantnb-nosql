@@ -129,3 +129,64 @@ exports.getSpecialtyNames = async (req, res) => {
         res.status(500).json({ message: 'Error fetching specialties' });
     }
 };
+
+// Controller to get a single specialty by ID and increment view count
+exports.getSpecialtyById = async (req, res) => {
+    try {
+        const specialtyId = req.params.id;
+        const specialty = await Specialty.findById(specialtyId);
+        if (!specialty) {
+            return res.status(404).json({ message: 'Specialty not found' });
+        }
+        // Tăng lượt xem
+        specialty.viewCount = (specialty.viewCount || 0) + 1;
+        await specialty.save();
+        res.json(specialty);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+// Controller to increment view count of a specialty by ID
+exports.incrementViewCount = async (req, res) => {
+    try {
+        const specialtyId = req.params.id;
+        const specialty = await Specialty.findById(specialtyId);
+        if (!specialty) {
+            return res.status(404).json({ message: 'Specialty not found' });
+        }
+        specialty.viewCount = (specialty.viewCount || 0) + 1; // Tăng lượt xem
+        await specialty.save();
+        res.status(200).json({ message: 'View count updated' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+exports.getTotalViewCount = async (req, res) => {
+    try {
+        const specialties = await Specialty.find({});
+        console.log('Specialties:', specialties); // Log data để kiểm tra
+
+        const totalViews = specialties.reduce((acc, specialty) => acc + (specialty.viewCount || 0), 0);
+        console.log('Total Views:', totalViews); // Log tổng số lượt xem để kiểm tra
+
+        res.json({ totalViews });
+    } catch (error) {
+        console.error('Error:', error); // Log lỗi nếu có
+        res.status(500).json({ error: error.message });
+    }
+};
+
+// Controller to get top 4 specialties by view count
+exports.getTopSpecialties = async (req, res) => {
+    try {
+        const topSpecialties = await Specialty.find({})
+            .sort({ viewCount: -1 })
+            .limit(4);
+        res.json(topSpecialties);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+

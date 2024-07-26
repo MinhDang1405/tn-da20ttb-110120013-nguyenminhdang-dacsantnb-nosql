@@ -19,6 +19,7 @@ const UpdateMarket = () => {
           name: fetchedMarket.name,
           address: fetchedMarket.address,
           price: fetchedMarket.price,
+          map: fetchedMarket.map, // Thêm trường map vào giá trị form
         });
       } catch (error) {
         console.error('Error fetching market:', error);
@@ -74,6 +75,12 @@ const UpdateMarket = () => {
           name="price"
         >
           <Input />
+        </Form.Item>
+        <Form.Item
+          label="Google Map"
+          name="map"
+        >
+          <Input placeholder="Nhập liên kết Google Map" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={loading} style={{ width: '100%', fontSize: '16px' }}>

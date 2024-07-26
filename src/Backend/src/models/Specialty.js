@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-
 const marketSchema = new mongoose.Schema({
     name: String,
     address: String,
     contact: String,
-    price: String
+    price: String,
+    map:String,
 });
 
 const manufacturerSchema = new mongoose.Schema({
@@ -41,7 +41,11 @@ const specialtySchema = new mongoose.Schema({
     market: [marketSchema],
     instructions: String,
     food_safety_standard: String,
-    expiry_date: [expiry_dateSchema]
+    expiry_date: [expiry_dateSchema],
+    viewCount: {
+        type: Number,
+        default: 0 // Khởi tạo số lượt xem mặc định là 0
+    }
 });
 
 const Specialty = mongoose.model('Specialty', specialtySchema);

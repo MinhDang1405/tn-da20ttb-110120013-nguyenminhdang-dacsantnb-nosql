@@ -17,7 +17,8 @@ import AddExpiryDate from './ExpiryDateTab/AddExpiryDate';
 import UpdateExpiryDate from './ExpiryDateTab/UpdateExpiryDate';
 import MarketTab from './MarketTab/MarketTab'; 
 import AddMarket from './MarketTab/AddMarket'; 
-import UpdateMarket from './MarketTab/UpdateMarket'; 
+import UpdateMarket from './MarketTab/UpdateMarket';
+import StatsPage from './StatsPageTab/StatsPage' 
 
 import './AdminLayout.css';
 
@@ -79,7 +80,8 @@ function AdminLayout() {
               <Route path="expirydate/update/:specialtyId/:expiryDateId" element={<UpdateExpiryDate />} />
               <Route path="market" element={<MarketTab />} /> 
               <Route path="market/add" element={<AddMarket />} /> 
-              <Route path="market/update/:specialtyId/:marketId" element={<UpdateMarket />} /> 
+              <Route path="market/update/:specialtyId/:marketId" element={<UpdateMarket />} />
+              <Route path="stats" element={<StatsPage/>} /> 
             </Routes>
           </div>
         </Content>

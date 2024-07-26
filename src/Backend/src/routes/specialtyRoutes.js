@@ -22,4 +22,12 @@ router.delete('/:specialtyId/category/:categoryId', specialtyController.deleteCa
 
 router.put('/:specialtyId/category/:categoryId', specialtyController.updateCategory);
 
+router.get('/specialty/:id', specialtyController.getSpecialtyById);
+
+router.patch('/specialties/increment-view/:id', specialtyController.incrementViewCount);
+
+router.get('/specialty/totalviews', specialtyController.getTotalViewCount);
+
+router.get('/specialties/top', specialtyController.getTopSpecialties);
+
 module.exports = router;

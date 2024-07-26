@@ -41,7 +41,7 @@ const AddMarket = () => {
       name="addMarket"
       onFinish={onFinish}
       layout="vertical"
-      initialValues={{ specialtyId: '', name: '', address: '', price: '' }}
+      initialValues={{ specialtyId: '', name: '', address: '', price: '', map: '' }}
     >
       <Form.Item
         name="specialtyId"
@@ -72,6 +72,12 @@ const AddMarket = () => {
         label="Giá trung bình"
       >
         <Input />
+      </Form.Item>
+      <Form.Item
+        name="map"
+        label="Google Map"
+      >
+        <Input placeholder="Nhập liên kết Google Map" />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" style={{ width: '100%', fontSize: '16px' }}>
